@@ -1,3 +1,4 @@
+[![Build and Push Docker Image](https://github.com/iagor1/nextjs_page/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/iagor1/nextjs_page/actions/workflows/docker-publish.yml)
 # With Docker
 
 This examples shows how to use Docker with Next.js based on the [deployment documentation](https://nextjs.org/docs/deployment#docker-image). Additionally, it contains instructions for deploying to Google Cloud Run. However, you can use any container-based deployment host.
