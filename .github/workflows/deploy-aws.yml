@@ -1,0 +1,16 @@
+name: Deploy on AWS
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Pull image from docker hub
+        run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-page:latest
+      - name: Remove docker container
+        run: docker rm -f nextjs-page
+      - name: Run docker container
+        run: docker run -d -p 3000:8080
