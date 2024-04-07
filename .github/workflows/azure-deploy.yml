@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Deploy container app to Azure Web App - webappnextjspage
+name: Build Deploy Azure
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
             context: .
             file: ./Dockerfile
             push: true
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-page:latest  # Replace [IMAGE_NAME] with your image name
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-page:latest
     deploy:
       permissions:
         contents: none

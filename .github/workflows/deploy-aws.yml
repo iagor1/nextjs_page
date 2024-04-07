@@ -1,8 +1,10 @@
 name: Deploy on AWS
 
 on:
-    push:
-        branches: [main]
+  workflow_run:
+    workflows: ["Build Deploy Azure"]
+    types:
+      - completed
 
 jobs:
   deploy:
