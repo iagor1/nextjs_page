@@ -15,4 +15,4 @@ jobs:
       - name: Remove docker container
         run: docker rm -f nextjs-page
       - name: Run docker container
-        run: docker run -d -p 3000:8080
+        run: docker run -d -p 3000:8080 ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-page:latest
