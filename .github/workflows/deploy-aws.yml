@@ -12,7 +12,9 @@ jobs:
     steps:
       - name: Pull image from docker hub
         run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-page:latest
+      - name: Stopping container
+        run: docker kill prod
       - name: Remove docker container
-        run: docker rm -f nextjs-page
+        run: docker rm -f prod
       - name: Run docker container
-        run: docker run -d -p 3000:8080 ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-page:latest
+        run: docker run -d --name prod -p 3000:8080 ${{ secrets.DOCKERHUB_USERNAME }}/nextjs-page:latest
